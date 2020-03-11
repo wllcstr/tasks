@@ -79,3 +79,4 @@ C:\repo\tasks\tasks\TaskAPI\TaskAPI\obj\Debug\TaskAPI.csproj.CoreCompileInputs.c
 C:\repo\tasks\tasks\TaskAPI\TaskAPI\obj\Debug\TaskAPI.csproj.CopyComplete
 C:\repo\tasks\tasks\TaskAPI\TaskAPI\obj\Debug\TaskAPI.dll
 C:\repo\tasks\tasks\TaskAPI\TaskAPI\obj\Debug\TaskAPI.pdb
+C:\repo\tasks\tasks\TaskAPI\TaskAPI\obj\Debug\TaskAPI.csprojAssemblyReference.cache
