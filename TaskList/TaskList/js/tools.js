@@ -28,6 +28,21 @@ function toast(msg) {
     M.toast({html: msg, classes: 'rounded'});
 }
 
+// Esta veio da comunidade: https://stackoverflow.com/questions/4656843/jquery-get-querystring-from-url
+// Read a page's GET URL variables and return them as an associative array.
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 function showLoading() {
     // usando visibility aqui pra manter o layout da página
     $(".progress").css("visibility", "visible");

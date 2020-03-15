@@ -36,3 +36,13 @@ nav span {
     resize: none;
 }
 
+i.material-icons.circle {
+    line-height: 32px;
+    width: 32px;
+    text-align: center;
+    float: right;
+    margin-top: 6px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+

@@ -42,6 +42,7 @@
                         <span class="card-title cyan darken-2 white-text">
                             <i class="material-icons">assignment_turned_in</i>
                             <span id="task_title">Nova Tarefa</span>
+                            <i title="Pendente" id="toggle" class="material-icons circle yellow">schedule</i>
                         </span>
                         <div class="input-field col s12">
                             <input id="txt_title" type="text">
@@ -52,11 +53,17 @@
                             <label for="txt_descr">Descrição da tarefa</label>
                         </div>
                         <div class="row">
+                            <p id="last_modified"></p>
+                        </div>
+                        <div class="row">
                             <button id="btn_addtask" class="btn waves-effect waves-light cyan darken-1" type="button" name="action">Cadastrar
                                 <i class="material-icons right">done</i>
                             </button>
                             <button id="btn_cancel" class="btn waves-effect waves-light cyan darken-1" type="button" name="action">Cancelar
                                 <i class="material-icons right">do_not_disturb</i>
+                            </button>
+                            <button id="btn_delete" class="btn waves-effect waves-light red darken-3" type="button" name="action">Excluir
+                                <i class="material-icons right">delete</i>
                             </button>
                         </div>
                     </div>

@@ -33,6 +33,8 @@ function fetchTasks() {
         if(tarefas.length == 0) {
             toast('Nenhuma tarefa registrada até o momento');
             hideLoading();
+            $('.tap-target').tapTarget();
+            $('.tap-target').tapTarget("open");
             return;
         }
 
@@ -86,20 +88,18 @@ function createTaskStatus(status, id, idx) {
 // Função que altera o status diretamente na lista
 function statusToggle() {
     var idx = $(this).data("position");
-    var tarefa = tarefas[idx];
-    var new_status = Math.pow(tarefa.Status-1, 2);
 
-    tarefa.Status = new_status;
+    tarefas[idx].Status =  Math.pow(tarefas[idx].Status-1, 2);
 
     showLoading();
     $.ajax({
         type: 'PUT',
-        url: localStorage.apiurl + '/api/Tasks/' + tarefa.Id,
+        url: localStorage.apiurl + '/api/Tasks/' + tarefas[idx].Id,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'bearer ' + sessionStorage.token
         },
-        data: tarefa       
+        data: tarefas[idx]       
     }).done(function () {
         toast('Status da tarefa alterado');
         $("#list_tasks").empty();
@@ -130,7 +130,7 @@ function deleteTask() {
         $("#list_tasks").empty();
         fetchTasks();
     }).fail(function () {
-        toast('Falha excluir a tarefa');
+            toast('Falha excluir a tarefa');
             hideLoading();
         });
 }
