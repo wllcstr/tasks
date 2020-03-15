@@ -12,7 +12,7 @@ using TaskAPI.Models;
 
 namespace TaskAPI.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class TasksController : ApiController
     {
         private TaskListDBContext db = new TaskListDBContext();

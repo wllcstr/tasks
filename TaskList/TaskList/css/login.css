@@ -1,0 +1,17 @@
+.card {
+    height: 280px;
+}
+
+.card.register {
+    height: 360px;
+}
+
+.card-content {
+    padding: 0 !important;
+}
+
+.card-title {
+    line-height: 45px !important;
+    text-align: left;
+    padding-left: 10px;
+}

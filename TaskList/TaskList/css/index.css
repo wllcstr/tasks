@@ -1,0 +1,18 @@
+nav {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    padding: 0 10px;
+}
+
+nav span {
+    display: inline-block;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+#logout {
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+}
