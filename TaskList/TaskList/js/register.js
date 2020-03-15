@@ -65,8 +65,10 @@ function createUser() {
         },
         data: userData       
     }).done(function () {
-        M.toast({html: 'Usuário registrado com sucesso.'})
-        window.location = "login.html";
+        M.toast({html: 'Usuário registrado com sucesso.'});
+        window.setTimeout(function(){
+            window.location = "login.html";
+        }, 900);
         }).fail(function (x, result, status) {
             if(status == "Conflict")
                 M.toast({html: 'Usuário já registrado.'});

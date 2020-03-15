@@ -1,0 +1,38 @@
+nav {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    padding: 0 10px;
+}
+
+nav span {
+    display: inline-block;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+#logout {
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+}
+
+.card {
+    padding-bottom: 1px;
+}
+
+.card-content {
+    padding: 0 !important;
+}
+
+.card-title {
+    line-height: 45px !important;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#txt_descr {
+    height: 135px;
+    resize: none;
+}
+

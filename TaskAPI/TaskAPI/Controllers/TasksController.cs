@@ -38,19 +38,21 @@ namespace TaskAPI.Controllers
 
         // PUT: api/Tasks/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutTasks(int id, Tasks tasks)
+        public IHttpActionResult PutTasks(int id, Tasks task)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != tasks.id)
+            if (id != task.id)
             {
                 return BadRequest();
             }
+            // altera a data da modificação
+            task.modified = DateTime.Now;
 
-            db.Entry(tasks).State = EntityState.Modified;
+            db.Entry(task).State = EntityState.Modified;
 
             try
             {
@@ -73,17 +75,21 @@ namespace TaskAPI.Controllers
 
         // POST: api/Tasks
         [ResponseType(typeof(Tasks))]
-        public IHttpActionResult PostTasks(Tasks tasks)
+        public IHttpActionResult PostTasks(Tasks task)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            // data da modificação
+            task.modified = DateTime.Now;
+            // data da inclusão
+            task.created = DateTime.Now;
 
-            db.Tasks.Add(tasks);
+            db.Tasks.Add(task);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = tasks.id }, tasks);
+            return CreatedAtRoute("DefaultApi", new { id = task.id }, task);
         }
 
         // DELETE: api/Tasks/5

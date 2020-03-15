@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Teste Supero] Tasklist - Visualização de Tarefa</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS Comum a todas as páginas -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- CSS Exclusivo Página de Login -->
+    <link href="css/task.css" rel="stylesheet">
+
+    <!-- jQuey CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <!-- Materlialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+    <!-- Scripts comuns -->
+    <script src="js/tools.js"></script>
+    <!-- Script da Página -->
+    <script src="js/task.js"></script>
+</head>
+<body>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    <nav class="blue-grey darken-2">
+        <span>Bem vindo,&nbsp;</span><span id="username"></span>
+        <i title="Sair" id="logout" class="material-icons right-align">exit_to_app</i>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 center-align">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title cyan darken-2 white-text">
+                            <i class="material-icons">assignment_turned_in</i>
+                            <span id="task_title">Nova Tarefa</span>
+                        </span>
+                        <div class="input-field col s12">
+                            <input id="txt_title" type="text">
+                            <label for="txt_title">Título</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea id="txt_descr" class="materialize-textarea"></textarea>
+                            <label for="txt_descr">Descrição da tarefa</label>
+                        </div>
+                        <div class="row">
+                            <button id="btn_addtask" class="btn waves-effect waves-light cyan darken-1" type="button" name="action">Cadastrar
+                                <i class="material-icons right">done</i>
+                            </button>
+                            <button id="btn_cancel" class="btn waves-effect waves-light cyan darken-1" type="button" name="action">Cancelar
+                                <i class="material-icons right">do_not_disturb</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

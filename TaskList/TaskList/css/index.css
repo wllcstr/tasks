@@ -16,3 +16,32 @@ nav span {
     cursor: pointer;
     float: right;
 }
+
+.collection-item {
+    text-align: left;
+}
+
+.collection-item span.title {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tStatus {
+    cursor: pointer;
+}
+
+.del_task {
+    cursor: pointer;
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    overflow: hidden;
+    right: 10px;
+    top: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+i.icon-red {
+    color: #c62828;
+}
