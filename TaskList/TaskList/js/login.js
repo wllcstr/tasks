@@ -18,6 +18,12 @@ $(document).ready(function() {
         }
     });
 
+    //fab para limpar o endereço da API, já que tá no localstorage
+    $("#fab_flushapi").click(function() {
+        localStorage.removeItem('apiurl');
+        validaAPI();
+    });
+
 });
 
 function getAuthToken() {
@@ -28,14 +34,14 @@ function getAuthToken() {
     };
 
     if(!loginData.username || !loginData.password) {
-        M.toast({html: 'Necessário informar nome de usuário e senha para acesso ao sistema.'})
+        toast('Necessário informar nome de usuário e senha para acesso ao sistema')
         return;
     }
 
     showLoading();
     $.ajax({
         type: 'POST',
-        url: sessionStorage.apiurl + '/token',
+        url: localStorage.apiurl + '/token',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -47,6 +53,6 @@ function getAuthToken() {
         window.location = "index.html";
         }).fail(function () {
             hideLoading();
-            M.toast({html: 'Ocorreu uma falha na autenticação.'})
+            toast('Ocorreu uma falha na autenticação')
         });
 }

@@ -14,6 +14,8 @@ $(document).ready(function() {
         history.back();
     });
 
+    $("#logout").click(systemLogoff);
+
     $("#btn_addtask").click(saveTask);
 
 });
@@ -23,7 +25,7 @@ function saveTask() {
     var fdescr = $("#txt_descr").val();
 
     if(!ftitle) {
-        M.toast({html: 'Preencha pelo menos o título da tarefa'});
+        toast('A tarefa deve possuir um título');
         return;
     }
 
@@ -32,52 +34,52 @@ function saveTask() {
     if(task_id == 0) {
 
         var taskData = {
-            title: ftitle,
-            desc: fdescr,
-            status: fstatus
+            Title: ftitle,
+            Desc: fdescr,
+            Status: fstatus
         };
         
         $.ajax({
             type: 'POST',
-            url: sessionStorage.apiurl + '/api/Tasks',
+            url: localStorage.apiurl + '/api/Tasks',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'bearer ' + sessionStorage.token
             },
             data: taskData       
         }).done(function () {
-            M.toast({html: 'Tarefa registrada com sucesso'});
+            toast('Tarefa registrada com sucesso');
             window.setTimeout(function(){
                 window.location = "index.html";
             }, 1300);
             }).fail(function () {
-                M.toast({html: 'Falha ao registrar a tarefa'});
+                toast('Falha ao registrar a tarefa');
                 hideLoading();
             });
     } else {
 
         var taskData = {
-            id: task_id,
-            title: ftitle,
-            desc: fdescr,
-            status: fstatus
+            Id: task_id,
+            Title: ftitle,
+            Desc: fdescr,
+            Status: fstatus
         };
 
         $.ajax({
             type: 'PUT',
-            url: sessionStorage.apiurl + '/api/Tasks',
+            url: localStorage.apiurl + '/api/Tasks/' + taskData.Id,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'bearer ' + sessionStorage.token
             },
             data: taskData       
         }).done(function () {
-            M.toast({html: 'Tarefa registrada com sucesso'});
+            toast('Tarefa registrada com sucesso');
             window.setTimeout(function(){
                 window.location = "index.html";
             }, 1300);            
         }).fail(function () {
-                M.toast({html: 'Falha ao registrar a tarefa'});
+                toast('Falha ao registrar a tarefa');
                 hideLoading();
             });
     }

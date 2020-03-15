@@ -23,28 +23,28 @@ function createUser() {
     var pw2 =  $("#pwd_senha2").val();
 
     if (!name) {
-        M.toast({html: 'Necessário escolher um nome de usuário'});
+        toast('Necessário escolher um nome de usuário');
         $("#txt_nome").select();
         $("#txt_nome").focus();
         return;
     }
 
     if(!pw1) {
-        M.toast({html: 'Necessário iformar uma senha de acesso'});
+        toast('Necessário iformar uma senha de acesso');
         $("#pwd_senha").select();
         $("#pwd_senha").focus();
         return;
     }
 
     if(!pw2) {
-        M.toast({html: 'Confirme a senha'});
+        toast('Confirme a senha');
         $("#pwd_senha2").select();
         $("#pwd_senha2").focus();
         return;
     }
 
     if(pw1 != pw2) {
-        M.toast({html: 'Senhas não são iguais.'});
+        toast('Senhas não são idênticas');
         $("#pwd_senha").select();
         $("#pwd_senha").focus();
         return;
@@ -59,21 +59,21 @@ function createUser() {
     showLoading();
     $.ajax({
         type: 'POST',
-        url: sessionStorage.apiurl + '/api/Users',
+        url: localStorage.apiurl + '/api/Users',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
         data: userData       
     }).done(function () {
-        M.toast({html: 'Usuário registrado com sucesso.'});
+        toast('Usuário registrado com sucesso.');
         window.setTimeout(function(){
             window.location = "login.html";
-        }, 900);
+        }, 1200);
         }).fail(function (x, result, status) {
             if(status == "Conflict")
-                M.toast({html: 'Usuário já registrado.'});
+            toast('Usuário já registrado.');
             else
-                M.toast({html: 'Ocorreu uma falha no registro.'})
+            toast('Ocorreu uma falha no registro.')
             hideLoading();
         });
 }

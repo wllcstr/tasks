@@ -45,12 +45,12 @@ namespace TaskAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != task.id)
+            if (id != task.Id)
             {
                 return BadRequest();
             }
             // altera a data da modificação
-            task.modified = DateTime.Now;
+            task.Modified = DateTime.Now;
 
             db.Entry(task).State = EntityState.Modified;
 
@@ -82,14 +82,14 @@ namespace TaskAPI.Controllers
                 return BadRequest(ModelState);
             }
             // data da modificação
-            task.modified = DateTime.Now;
+            task.Modified = DateTime.Now;
             // data da inclusão
-            task.created = DateTime.Now;
+            task.Created = DateTime.Now;
 
             db.Tasks.Add(task);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = task.id }, task);
+            return CreatedAtRoute("DefaultApi", new { id = task.Id }, task);
         }
 
         // DELETE: api/Tasks/5
@@ -119,7 +119,7 @@ namespace TaskAPI.Controllers
 
         private bool TasksExists(int id)
         {
-            return db.Tasks.Count(e => e.id == id) > 0;
+            return db.Tasks.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -6,13 +6,13 @@ namespace TaskAPI.Models {
     public class Tasks {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public string title { get; set; }
-        public int status { get; set; }
-        public string desc { get; set; }
-        public DateTime? created { get; set; }
-        public DateTime? modified { get; set; }
-        public DateTime? finished { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public int Status { get; set; }
+        public string Desc { get; set; }
+        public DateTime? Created { get; set; }
+        public DateTime? Modified { get; set; }
+        public DateTime? Finished { get; set; }
 
     }
 }
