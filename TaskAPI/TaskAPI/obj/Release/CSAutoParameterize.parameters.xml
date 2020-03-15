@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="TaskListDBContext-Web.config Connection String" description="TaskListDBContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=34.95.175.180;Initial Catalog=tasklistdb;Integrated Security=False;User Id=sqlserver;Password=q1w2e3r4;MultipleActiveResultSets=True;Connection Timeout=180" tags="SqlConnectionString">
+  <parameter name="TaskListDBContext-Web.config Connection String" description="TaskListDBContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=wllcstr.database.windows.net;Initial Catalog=tasksql;Integrated Security=False;User Id=wllcstr;Password=c3por2d2@;MultipleActiveResultSets=True;Connection Timeout=180" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\repo\\tasks\\tasks\\TaskAPI\\TaskAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TaskListDBContext']/@connectionString" />
   </parameter>
 </parameters>
